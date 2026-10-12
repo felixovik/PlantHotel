@@ -1,7 +1,7 @@
 public class CarnivorousPlant extends Plant{
 
-    CarnivorousPlant(String name, String type, String nutritionType, double height, double consumptionRate) {
-        super(name, type, nutritionType, height, consumptionRate);
+    CarnivorousPlant(String name, String type, String nutritionType, double height) {
+        super(name, type, nutritionType, height);
     }
 
     @Override

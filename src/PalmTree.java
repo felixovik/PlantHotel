@@ -1,8 +1,8 @@
 public class PalmTree extends Plant{
 
 
-    PalmTree(String name, String type, String nutritionType, double height, double consumptionRate) {
-        super(name, type, nutritionType, height, consumptionRate);
+    PalmTree(String name, String type, String nutritionType, double height) {
+        super(name, type, nutritionType, height);
     }
 
     @Override
