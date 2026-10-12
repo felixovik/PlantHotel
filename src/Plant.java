@@ -1,20 +1,16 @@
-public class Plant {
+public abstract class Plant {
+
+
     private String name;
-    private String type;
     private String nutritionType;
     private double height;
-    private double consumptionRate;
+    private double consumptionRatePerDay;
 
-    Plant(String name, String type, String nutritionType, double height, double consumptionRate){
+    Plant(String name, String type, String nutritionType, double height, double consumptionRatePerDay){
         this.name = name;
-        this.type = type;
         this.nutritionType = nutritionType;
         this.height = height;
-        this.consumptionRate = consumptionRate;
-    }
-
-    public String getType() {
-        return type;
+        this.consumptionRatePerDay = consumptionRatePerDay;
     }
 
     public String getNutritionType() {
@@ -26,15 +22,11 @@ public class Plant {
     }
 
     public double getConsumptionRate() {
-        return consumptionRate;
+        return consumptionRatePerDay;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public void setNutritionType(String nutritionType) {
@@ -45,7 +37,9 @@ public class Plant {
         this.height = height;
     }
 
-    public void setConsumptionRate(double consumptionRate) {
-        this.consumptionRate = consumptionRate;
+    public void setConsumptionRate(double consumptionRatePerDay) {
+        this.consumptionRatePerDay = consumptionRatePerDay;
     }
+
+    public abstract double CalculateConsumptionRate();
 }
