@@ -23,16 +23,16 @@ public class Hotel {
         String plant =
                 JOptionPane.showInputDialog("Choose a plant to feed: Igge, Laura, MeatLoaf or Olof");
         if (plant == null) {
-            JOptionPane.showMessageDialog(null, "Please enter a valid option!");
+            Utilities.printErrorMessage();
         } else if (plant.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Input cannot be empty!");
+            Utilities.printErrorMessage();
             // Utilities.openWebpage("https://www.youtube.com/watch?v=EE-xtCF3T94");
         } else if (plant.equalsIgnoreCase("igge")) {
             JOptionPane.showMessageDialog(null,
                     "Plant information: \n Name: " + igge.getName() + "\n Consumes "
                             + igge.calculateConsumptionRate() + " Liters of " + igge.getNutritionType()
                             + " Per Day.");
-        } else if (plant.equalsIgnoreCase("larua")) {
+        } else if (plant.equalsIgnoreCase("laura")) {
             JOptionPane.showMessageDialog(null,
                     "PLant information: \n Name: " + laura.getName() + "\n Consumes "
                             + laura.calculateConsumptionRate() + " Liters of " + laura.getNutritionType()
@@ -48,8 +48,9 @@ public class Hotel {
                             + olof.calculateConsumptionRate() + " Liters of " + olof.getNutritionType()
                             + " Per Day.");
         } else {
-            JOptionPane.showMessageDialog(null, "Please enter a valid option!");
-            Utilities.openWebpage("https://www.youtube.com/watch?v=EE-xtCF3T94");
+            Utilities.printErrorMessage();
+
         }
     }
+
 }

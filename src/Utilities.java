@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
 
@@ -8,5 +9,9 @@ public class Utilities {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void printErrorMessage(){
+        JOptionPane.showMessageDialog(null, "You have to choose between Igge, Laura, Olof or MeatLoaf!");
     }
 }
