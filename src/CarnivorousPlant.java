@@ -1,13 +1,17 @@
-public class CarnivorousPlant extends Plant{
+public class CarnivorousPlant extends Plant implements Consumable{
 
-    CarnivorousPlant(String name, String type, String nutritionType, double height) {
-        super(name, type, nutritionType, height);
+    private static final double CARNIVOROUS_PLANT_NUTRITION_MULTIPLIER = 0.2;
+    private static final double CARNIVOROUS_PLANT_NUTRITION_BASE = 0.1;
+
+    CarnivorousPlant(String name, NutritionType nutritionType, double height) {
+        //Call the superclass
+        super(name, nutritionType, height);
     }
 
+
+    //Example of run-time Polymorfism
     @Override
-    public double CalculateConsumptionRate() {
-        double CARNIVOROUS_PLANT_NUTRITION_MULTIPLIER = 0.2;
-        double CARNIVOROUS_PLANT_NUTRITION_BASE = 0.1;
+    public double calculateConsumptionRate() {
         return CARNIVOROUS_PLANT_NUTRITION_BASE + (CARNIVOROUS_PLANT_NUTRITION_MULTIPLIER*getHeight());
     }
 

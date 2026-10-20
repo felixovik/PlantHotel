@@ -1,21 +1,20 @@
-public abstract class Plant {
-
-
+public abstract class Plant implements Consumable {
+    // Private variables encapsulated by methods
     private String name;
-    private String nutritionType;
+    private NutritionType nutritionType;
     private double height;
 
-    Plant(String name, String type, String nutritionType, double height){
+    Plant(String name, NutritionType nutritionType, double height) {
         this.name = name;
         this.nutritionType = nutritionType;
         this.height = height;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public String getNutritionType() {
+    public NutritionType getNutritionType() {
         return nutritionType;
     }
 
@@ -27,13 +26,11 @@ public abstract class Plant {
         this.name = name;
     }
 
-    public void setNutritionType(String nutritionType) {
+    public void setNutritionType(NutritionType nutritionType) {
         this.nutritionType = nutritionType;
     }
 
     public void setHeight(double height) {
         this.height = height;
     }
-
-    public abstract double CalculateConsumptionRate();
 }

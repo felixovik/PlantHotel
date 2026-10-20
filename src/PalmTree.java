@@ -1,14 +1,16 @@
-public class PalmTree extends Plant{
+public class PalmTree extends Plant implements Consumable{
 
+    //Declare Constant
+    private static final double PALM_TREE_NUTRITION_MULTIPLIER = 0.5;
 
-    PalmTree(String name, String type, String nutritionType, double height) {
-        super(name, type, nutritionType, height);
+    PalmTree(String name, NutritionType nutritionType, double height) {
+        //Call the superclass
+        super(name, nutritionType, height);
     }
 
+    //Example of run-time Polymorfism
     @Override
-    public double CalculateConsumptionRate() {
-        double PALM_TREE_NUTRITION_MULTIPLIER = 0.5;
+    public double calculateConsumptionRate() {
         return PALM_TREE_NUTRITION_MULTIPLIER * getHeight();
     }
-
 }

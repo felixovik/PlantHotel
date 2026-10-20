@@ -1,13 +1,16 @@
-public class Cactus extends Plant{
-    private double CACTUS_PLANT_NUTRITION_BASE = 0.02;
+public class Cactus extends Plant implements Consumable{
+    private static final double CACTUS_PLANT_NUTRITION_BASE = 0.02;
 
-    Cactus(String name, String type, String nutritionType, double height) {
-        super(name, type, nutritionType, height);
+    Cactus(String name, NutritionType nutritionType, double height) {
+        super(name, nutritionType, height);
     }
 
+    //Example of run-time Polymorfism
     @Override
-    public double CalculateConsumptionRate(){
+    public double calculateConsumptionRate() {
         return CACTUS_PLANT_NUTRITION_BASE;
     }
+
+
 
 }
